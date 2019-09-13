@@ -96,8 +96,28 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        self.set_light_on()
+
+        while self._light == "ON":
+
+            for i in range(0, len(self._list)-1):
+                self._position = i
+                smallest_index = self._position 
+
+                if self.can_move_right():
+                    
+                    for j in range(self._position, len(self._list)):
+                        if self._list[j] < self._list[smallest_index]:
+                            smallest_index = j
+
+                
+                self._list[self._position], self._list[smallest_index] = self._list[smallest_index], self._list[self._position]
+
+            self.set_light_off()
+
+            return self._list
+
+
 
 
 if __name__ == "__main__":
