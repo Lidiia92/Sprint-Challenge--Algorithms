@@ -98,7 +98,7 @@ class SortingRobot:
         """
         self.set_light_on()
 
-        while self._light == "ON":
+        while self.light_is_on():
 
             for i in range(0, len(self._list)-1):
                 self._position = i
@@ -116,6 +116,32 @@ class SortingRobot:
             self.set_light_off()
 
             return self._list
+
+        #     while self.can_move_right():
+
+        #         if self.compare_item() == 1:
+        #             #print (self._item)
+        #             self.swap_item()
+        #             self.move_right()
+        #         elif self.compare_item() == -1:
+                    
+        #             #print (self._item)
+        #             self.move_right()
+
+        #     while self.can_move_left():
+
+        #         if self.compare_item() == -1:
+        #             #print (self._item)
+        #             self.swap_item()
+        #             self.move_left()
+        #         elif self.compare_item() == 1:
+                    
+        #             #print (self._item)
+        #             self.move_left()
+
+        #     self.set_light_off()
+
+        # print('list', self._position)
 
 
 
